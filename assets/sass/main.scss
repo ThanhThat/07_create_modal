@@ -1,0 +1,145 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(
+    45deg,
+    rgb(65, 88, 208) 0%,
+    rgb(200, 80, 192) 50%,
+    rgb(255, 204, 112) 100%
+  );
+
+  height: 100vh;
+  overflow: hidden;
+}
+
+@mixin transition {
+  transition: all 0.25s ease-in;
+  will-change: opacity;
+}
+
+button {
+  border: none;
+  font-size: 1.8rem;
+  padding: 4px 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+
+  @include transition;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn-open-modal {
+  padding: 1.6rem 2rem;
+}
+
+.overlay.open {
+  display: block;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background-color: rgba($color: #000000, $alpha: 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -300px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modal {
+  background-color: #fff;
+  width: 40rem;
+  max-width: 50rem;
+  border-radius: 6px;
+  overflow: hidden;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+
+  animation: fadeIn 0.25s ease-in;
+
+  &-header {
+    background-color: #e26e70;
+    padding: 1.6rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  &-close {
+    font-size: 2.2rem;
+    color: #000;
+    padding: 0.6rem;
+
+    @include transition;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+
+  &-body {
+    padding: 1.6rem;
+
+    &-heading {
+      color: #e26e70;
+      font-size: 2rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &-footer {
+    padding: 1.6rem;
+    text-align: right;
+
+    .btn-close {
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      background-color: #e26e70;
+      color: #fff;
+    }
+  }
+}

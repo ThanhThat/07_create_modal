@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07 Create Modal</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/main.min.css" />
+
+    <!-- Custom JS -->
+    <script src="./assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <button class="btn-open-modal">Open Modal</button>
+    <div class="overlay">
+      <div class="modal">
+        <header class="modal-header">
+          <h1 class="modal-title">Welcome to QProject</h1>
+
+          <a href="#" class="modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </header>
+
+        <main class="modal-body">
+          <h2 class="modal-body-heading">Modal</h2>
+          <p class="modal-body-text">This is section body of modal</p>
+        </main>
+
+        <footer class="modal-footer">
+          <button class="btn-close">Close</button>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
